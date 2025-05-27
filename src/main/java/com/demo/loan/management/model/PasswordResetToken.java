@@ -20,11 +20,8 @@ public class PasswordResetToken {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    // Used for email-based password reset
     @Column(nullable = true, unique = true)
     private String token;
-
-    // Used for OTP-based password reset
     @Column(length = 6)
     private String otp;
 

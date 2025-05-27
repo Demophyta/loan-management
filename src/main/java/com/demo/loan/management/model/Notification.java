@@ -8,8 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 @Builder
 @Table(name = "notifications")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Notification {
@@ -27,7 +26,7 @@ public class Notification {
     private String status;
     private LocalDateTime createdAt;
 
-    @PrePersist  // 🔴 Auto-set createdAt before inserting into DB
+    @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
     }

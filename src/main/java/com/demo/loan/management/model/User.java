@@ -7,8 +7,6 @@ import lombok.*;
 @Data
 @Builder
 @Table(name = "users")
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
@@ -32,5 +30,5 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role; // This now refers to the top-level Role enum
+    private Role role;
 }
